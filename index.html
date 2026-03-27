@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aaya ElSharief | Backend Developer Portfolio</title>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,12 +17,36 @@
     <nav>
         <div class="container">
             <a href="#" class="logo">Aaya ElSharief</a>
-            <div class="nav-links">
+
+            <!-- Desktop Nav Links -->
+            <div class="nav-links" id="nav-links">
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
-
+                <a href="#contact">Contact</a>
             </div>
+
+            <div class="nav-actions">
+                <!-- Dark Mode Toggle -->
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button>
+
+                <!-- Hamburger -->
+                <button class="hamburger" id="hamburger" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#projects" class="mobile-link">Projects</a>
+            <a href="#experience" class="mobile-link">Experience</a>
+            <a href="#contact" class="mobile-link">Contact</a>
         </div>
     </nav>
 
@@ -44,7 +67,7 @@
                                 class="fab fa-github"></i></a>
                         <a href="https://linkedin.com/in/aaya-elsharief" target="_blank" class="circle linkedin"><i
                                 class="fab fa-linkedin-in"></i></a>
-                        <a href="mailto:aaya.elsh@gmail.com" class="circle email"><i class="fas fa-envelope"></i></a>
+                        <a href="/cdn-cgi/l/email-protection#5233332b337c373e213a12353f333b3e7c313d3f" class="circle email"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="hero-image">
@@ -84,8 +107,70 @@
                 <h2>Brief Summary</h2>
                 <p>Dedicated Backend Developer with 3+ years of experience specialized in <strong>NestJS</strong> and
                     <strong>Laravel</strong>. Focused on authentication, RBAC, payment integrations, and real-time
-                    systems.
-                </p>
+                    systems.</p>
+            </div>
+        </section>
+
+        <!-- ✦ Projects Section -->
+        <section id="projects" class="container">
+            <div class="section-header reveal">
+                <h2>Featured Projects</h2>
+                <p>A selection of real-world systems I've designed and shipped.</p>
+            </div>
+            <div class="projects-grid">
+
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-icon purple"><i class="fas fa-heartbeat"></i></div>
+                        <div class="project-links">
+                            <a href="https://github.com/Aaya-Elsharief" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3>Fikritak Healthcare Platform</h3>
+                    <p>Backend for a healthcare consultation platform serving 500+ professionals. Features real-time video (Stream.io), chat (Socket.io), and granular RBAC across 5 user roles.</p>
+                    <div class="card-stack">
+                        <span class="tag">NestJS</span>
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Prisma</span>
+                        <span class="tag">WebSockets</span>
+                        <span class="tag">OAuth 2.0</span>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-icon blue"><i class="fas fa-store"></i></div>
+                        <div class="project-links">
+                            <a href="https://github.com/Aaya-Elsharief" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3>Vscourse Freelancer Marketplace</h3>
+                    <p>Core REST API for a freelancer marketplace with 1,000+ active users. Built 25+ product catalogue APIs, order workflows, and integrated Stripe & MyFatoorah payment gateways.</p>
+                    <div class="card-stack">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Stripe</span>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-header">
+                        <div class="project-icon green"><i class="fas fa-code-branch"></i></div>
+                        <div class="project-links">
+                            <a href="https://github.com/Aaya-Elsharief" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <h3>CI/CD Pipeline Optimization</h3>
+                    <p>Stewarded Jenkins pipelines and SonarQube integration resulting in an 80% reduction in deployment errors and 40% fewer code smells across the codebase.</p>
+                    <div class="card-stack">
+                        <span class="tag">Jenkins</span>
+                        <span class="tag">SonarQube</span>
+                        <span class="tag">CI/CD</span>
+                        <span class="tag">NestJS</span>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -97,7 +182,6 @@
             </div>
 
             <div class="experience-grid">
-                <!-- Vscourse -->
                 <div class="card reveal">
                     <div class="card-header">
                         <div class="card-title">
@@ -107,10 +191,8 @@
                         <span class="card-date">Dec 2025 – Present</span>
                     </div>
                     <ul>
-                        <li>Engineered core REST API features for a freelancer marketplace serving <strong>1,000+ active
-                                users</strong>.</li>
-                        <li>Contributed to e-commerce backend modules, implementing <strong>25+ product catalogue
-                                APIs</strong> and order workflows.</li>
+                        <li>Engineered core REST API features for a freelancer marketplace serving <strong>1,000+ active users</strong>.</li>
+                        <li>Contributed to e-commerce backend modules, implementing <strong>25+ product catalogue APIs</strong> and order workflows.</li>
                         <li>Integrated Stripe and MyFatoorah payment gateways for secure transactions.</li>
                     </ul>
                     <div class="card-stack">
@@ -121,7 +203,6 @@
                     </div>
                 </div>
 
-                <!-- Fikritak -->
                 <div class="card reveal">
                     <div class="card-header">
                         <div class="card-title">
@@ -131,8 +212,7 @@
                         <span class="card-date">Oct 2025 – Present</span>
                     </div>
                     <ul>
-                        <li>Architected backend for a healthcare platform serving <strong>500+ professionals</strong>
-                            across 5+ complex multi-role workflows.</li>
+                        <li>Architected backend for a healthcare platform serving <strong>500+ professionals</strong> across 5+ complex multi-role workflows.</li>
                         <li>Built a real-time consultation system using Stream.io (Video) and Socket.io (Chat).</li>
                         <li>Enforced granular RBAC and implemented OAuth 2.0 social login with FCM alerts.</li>
                     </ul>
@@ -144,7 +224,6 @@
                     </div>
                 </div>
 
-                <!-- Lean Node Developer -->
                 <div class="card reveal">
                     <div class="card-header">
                         <div class="card-title">
@@ -154,8 +233,7 @@
                         <span class="card-date">Aug – Oct 2023</span>
                     </div>
                     <ul>
-                        <li>Authored <strong>30+ RESTful APIs</strong> and reduced response time by <strong>20%</strong>
-                            through query optimization.</li>
+                        <li>Authored <strong>30+ RESTful APIs</strong> and reduced response time by <strong>20%</strong> through query optimization.</li>
                         <li>Owned JWT-based auth and authorization modules, improving system security coverage.</li>
                     </ul>
                     <div class="card-stack">
@@ -165,7 +243,6 @@
                     </div>
                 </div>
 
-                <!-- Lean Node Intern -->
                 <div class="card reveal">
                     <div class="card-header">
                         <div class="card-title">
@@ -175,10 +252,8 @@
                         <span class="card-date">Feb – Aug 2023</span>
                     </div>
                     <ul>
-                        <li>Stewarded Jenkins pipelines, resulting in an <strong>80% reduction</strong> in deployment
-                            errors.</li>
-                        <li>Reduced code smells by <strong>40%</strong> using SonarQube metrics and code quality
-                            standards.</li>
+                        <li>Stewarded Jenkins pipelines, resulting in an <strong>80% reduction</strong> in deployment errors.</li>
+                        <li>Reduced code smells by <strong>40%</strong> using SonarQube metrics and code quality standards.</li>
                     </ul>
                     <div class="card-stack">
                         <span class="tag">Jenkins</span>
@@ -203,52 +278,99 @@
                 <span class="skill-pill">TypeScript</span>
                 <span class="skill-pill">JavaScript</span>
                 <span class="skill-pill">PHP</span>
-
                 <span class="skill-pill">PostgreSQL</span>
                 <span class="skill-pill">MySQL</span>
                 <span class="skill-pill">MongoDB</span>
                 <span class="skill-pill">Mongoose</span>
                 <span class="skill-pill">Prisma</span>
-
                 <span class="skill-pill">REST APIs</span>
                 <span class="skill-pill">API Design</span>
                 <span class="skill-pill">Authentication (JWT)</span>
                 <span class="skill-pill">OAuth</span>
-
                 <span class="skill-pill">Docker</span>
                 <span class="skill-pill">VPS</span>
                 <span class="skill-pill">Linux</span>
                 <span class="skill-pill">Nginx</span>
-
                 <span class="skill-pill">Redis</span>
                 <span class="skill-pill">Caching</span>
-
                 <span class="skill-pill">Git</span>
                 <span class="skill-pill">GitHub</span>
                 <span class="skill-pill">CI/CD</span>
                 <span class="skill-pill">Jenkins</span>
                 <span class="skill-pill">Jira</span>
-
                 <span class="skill-pill">System Design</span>
                 <span class="skill-pill">Problem Solving</span>
+            </div>
+        </section>
+
+        <!-- ✦ Contact Section -->
+        <section id="contact" class="container reveal">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Have a project in mind or want to collaborate? Drop me a message.</p>
+            </div>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <span class="contact-label">Email</span>
+                            <a href="/cdn-cgi/l/email-protection#20414159410e454c534860474d41494c0e434f4d"><span class="__cf_email__" data-cfemail="0a6b6b736b246f6679624a6d676b636624696567">aaya.elsh@gmial.com</span></a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
+                        <div>
+                            <span class="contact-label">LinkedIn</span>
+                            <a href="https://linkedin.com/in/aaya-elsharief" target="_blank">aaya-elsharief</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fab fa-github"></i></div>
+                        <div>
+                            <span class="contact-label">GitHub</span>
+                            <a href="https://github.com/Aaya-Elsharief" target="_blank">Aaya-Elsharief</a>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contact-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What's this about?">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <i class="fas fa-paper-plane btn-icon"></i>
+                    </button>
+                    <div class="form-success" id="form-success">
+                        <i class="fas fa-check-circle"></i> Message sent! I'll get back to you soon.
+                    </div>
+                </form>
             </div>
         </section>
 
     </main>
 
     <footer>
-        <div class="container">
-            <div class="footer-socials">
-                <a href="https://github.com/Aaya-Elsharief" target="_blank" class="circle github"><i
-                        class="fab fa-github"></i></a>
-                <a href="https://linkedin.com/in/aaya-elsharief" target="_blank" class="circle linkedin"><i
-                        class="fab fa-linkedin-in"></i></a>
-                <a href="mailto:aaya.elsh@gmail.com" class="circle email"><i class="fas fa-envelope"></i></a>
-            </div>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">© 2026 Aaya ElSharief.
+          
+            <p style="color: var(--text-muted); font-size: 0.85rem;">© 2026 Aaya ElSharief.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
