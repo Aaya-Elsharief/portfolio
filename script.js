@@ -105,68 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ============================================
-       CONTACT FORM
-       Calls /api/contact — a Vercel serverless
-       function that holds the key server-side.
-       The key is NEVER in this file.
-       ============================================ */
-    const form      = document.getElementById('contact-form');
-    const success   = document.getElementById('form-success');
-    const submitBtn = form.querySelector('.submit-btn');
-    const btnText   = form.querySelector('.btn-text');
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const name    = document.getElementById('name').value.trim();
-        const email   = document.getElementById('email').value.trim();
-        const subject = document.getElementById('subject').value.trim();
-        const message = document.getElementById('message').value.trim();
-
-        // Inline validation
-        let hasError = false;
-        ['name', 'email', 'message'].forEach(id => {
-            const field = document.getElementById(id);
-            if (!field.value.trim()) {
-                field.style.borderColor = '#ef4444';
-                field.addEventListener('input', () => { field.style.borderColor = ''; }, { once: true });
-                hasError = true;
-            }
-        });
-        if (hasError) return;
-
-        // Loading state
-        submitBtn.disabled = true;
-        btnText.textContent = 'Sending…';
-
-        try {
-            const res = await fetch('/api/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({ name, email, subject, message })
-            });
-
-            const data = await res.json();
-
-            if (data.success) {
-                success.classList.add('visible');
-                form.reset();
-                setTimeout(() => success.classList.remove('visible'), 6000);
-            } else {
-                throw new Error(data.message || 'Submission failed');
-            }
-
-        } catch (err) {
-            console.error('Contact form error:', err);
-            alert('Oops — something went wrong. Please email me directly at aaya.elsh@gmail.com');
-        } finally {
-            submitBtn.disabled = false;
-            btnText.textContent = 'Send Message';
-        }
-    });
-
-
-    /* ============================================
        HERO PARALLAX
        ============================================ */
     window.addEventListener('scroll', () => {
