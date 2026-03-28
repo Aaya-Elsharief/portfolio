@@ -19,7 +19,7 @@ export default async function handler(req, res) {
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
-                access_key: process.env.WEB3FORMS_KEY,   // ← stored in Vercel, never exposed
+                access_key: process.env.WEB3FORMS_KEY,
                 name,
                 email,
                 subject:  subject || `Portfolio contact from ${name}`,
